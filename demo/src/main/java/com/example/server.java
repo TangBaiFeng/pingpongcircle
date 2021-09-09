@@ -33,8 +33,11 @@ public class server {
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
             double radius = in.readDouble();
-            System.out.println("The radius is " + radius);
-            out.writeDouble(radius * Math.PI * 2);
+            double height = in.readDouble();
+            double volume = Math.PI * radius * radius * height;
+            out.writeDouble(radius);
+            out.writeDouble(height);
+            out.writeDouble(volume);
 
             socket.close();
             in.close();
