@@ -25,8 +25,8 @@ public class client {
         DataOutputStream out;
         Socket socket;
         Scanner reader = new Scanner(System.in);
-        try {
-            System.out.println("Trying connection . . .");
+        System.out.println("Trying connection . . .");
+        try {            
             socket = new Socket(host, port);
             System.out.println("Connected");
 
@@ -36,6 +36,8 @@ public class client {
             out.writeDouble(reader.nextDouble());
             System.out.println("What is the height?");
             out.writeDouble(reader.nextDouble());
+            System.out.println("The radius is " + in.readDouble());
+            System.out.println("The height is " + in.readDouble());
             System.out.println("The volume is " + in.readDouble());
 
             socket.close();
