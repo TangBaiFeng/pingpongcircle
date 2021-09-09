@@ -34,7 +34,9 @@ public class client {
             out = new DataOutputStream(socket.getOutputStream());
             System.out.println("What is the radius?");
             out.writeDouble(reader.nextDouble());
-            System.out.println("The circumference is " + in.readDouble());
+            System.out.println("What is the height?");
+            out.writeDouble(reader.nextDouble());
+            System.out.println("The volume is " + in.readDouble());
 
             socket.close();
             reader.close();
